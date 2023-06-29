@@ -17,8 +17,8 @@ module.exports = (path)=>{
         default:
             break;
     }
-    // let url = `http://${path}:${port}`;
-    let url = `http://localhost:${port}`;
+    let url = `http://${path}:${port}`;
+    // let url = `http://localhost:${port}`;
     return createProxyMiddleware({
         target: url,
         changeOrigin:true,
