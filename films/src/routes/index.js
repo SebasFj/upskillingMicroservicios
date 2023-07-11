@@ -6,6 +6,7 @@ const router = Router();
 
 router.get("/", controllers.getFilms)
 router.post("/", filmsValidation, controllers.createFilms)
+router.get("/:id", controllers.getById)
 
 
 

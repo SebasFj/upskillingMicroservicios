@@ -6,6 +6,7 @@ const router = Router();
 
 router.get("/", controllers.getPlanets)
 router.post("/", middlewares.planetsValidation, controllers.createPlanets)
+router.get("/:id", controllers.getById)
 
 
 

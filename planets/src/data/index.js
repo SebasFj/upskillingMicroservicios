@@ -1,11 +1,16 @@
-const planets = require("./planets.json")
-const {ClientError} = require("../../utils/errors")
+const axios = require("axios");
 
 module.exports = {
     list: async () => {
-        return planets;
+        const {data} = await axios("/")
+        return data;
     },
-    create: async () => {
-        throw new ClientError ("Ocurrió un error al crear el planeta" , 401)
+    create: async (planet) => {
+        const {data} = await axios.post("/", planet);
+        return data;
+    },
+    getById: async (id) => {
+        const {data} = await axios(`/${id}`);
+        return data;
     }
 }

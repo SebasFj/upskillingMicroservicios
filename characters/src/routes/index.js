@@ -5,6 +5,7 @@ const middlewares = require("../../middlewares")
 const router = Router();
 
 router.get("/", controllers.getCharacters)
+router.get("/:id", controllers.getById)
 router.post("/", middlewares.characterValidation, controllers.createCharacters)
 
 
